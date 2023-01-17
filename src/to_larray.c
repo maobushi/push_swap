@@ -6,11 +6,11 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:40:19 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/17 08:21:22 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/17 09:53:34 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../push_swap.h"
+#include "push_swap.h"
 
 long *to_larray(int argc, char **argv)
 {

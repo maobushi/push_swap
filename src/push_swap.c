@@ -6,11 +6,11 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:07 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/17 08:21:24 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/17 09:53:55 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int count_elements(char **input)
 {
@@ -42,9 +42,13 @@ int main(int argc,char **argv)
     
     int i = 0;
     while(i < argc)
-        printf("%ld\n",long_argv[i++]);
+        printf("longargv : %ld\n",long_argv[i++]);
 
+    long*after_sort;
+    after_sort = bubble_sort(argc,long_argv);
     
+    
+
     //make_list(bubble_sort(convert_iarray(argc,argv)));
     //以下、5個以下の対応を考える
     

@@ -6,12 +6,12 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:33:41 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/16 16:34:13 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/17 10:06:05 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../push_swap.h"
+#include "../src/push_swap.h"
 
 long ft_atol(char* str)
 {

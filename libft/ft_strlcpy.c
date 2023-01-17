@@ -6,12 +6,12 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:06:25 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/16 15:28:48 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/17 10:06:11 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../push_swap.h"
+#include "../src/push_swap.h"
 
 static size_t	ft_strlen(const char *s)
 {

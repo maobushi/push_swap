@@ -4,7 +4,7 @@ CC := gcc
 
  NAME := test
  SRCS := ./libft/ft_split.c ./libft/ft_strlcpy.c ./libft/ft_atol.c\
-		./src/check.c ./src/push_swap.c ./src/to_larray.c ./src/print_error.c
+		./src/check.c ./src/push_swap.c ./src/to_larray.c ./src/print_error.c ./src/bubble_sort.c
 		
 
  # OBJS := test1.o test2.o test3.o
