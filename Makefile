@@ -5,7 +5,7 @@ CC := gcc
  NAME := push_swap
  SRCS := ./libft/ft_split.c ./libft/ft_strlcpy.c ./libft/ft_atol.c\
 		./src/op/input_list.c ./src/op/lst.c ./src/op/push.c ./src/op/reverse_rotate.c ./src/op/rotate.c ./src/op/swap.c \
-		./src/check.c ./src/push_swap.c ./src/to_larray.c ./src/print_error.c ./src/bubble_sort.c
+		./src/check.c ./src/push_swap.c ./src/to_larray.c ./src/print_error.c ./src/bubble_sort.c ./src/divide_sort.c
 		
 
  # OBJS := test1.o test2.o test3.o

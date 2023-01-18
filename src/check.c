@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:25:38 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/18 11:54:05 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/18 14:34:05 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ char ** check_iscorrectf(int argc,char **argv)
     else if(argc == 2)
     {
         tmp = (char **)ft_split(argv[1],' ');
+        printf("%p\n", tmp);
+        printf("%p\n", tmp[0]);
+        
     }
     else
     {
