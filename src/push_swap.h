@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:41 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/18 13:18:53 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/18 15:23:40 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ void ft_lstadd_back(t_stack **lst, t_stack *new);
 
 char	**ft_split(char const *s, char c);
 
-char ** check_iscorrectf(int argc,char **argv);
+char ** check_iscorrectf(int argc,char **argv,int *flags);
 int check_isnum(int argc,char ** argv);
 bool check_int_range(int argc,long * argv);
 bool check_dup(int argc,long * argv);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 
 long ft_atol(char* str);
-long * to_larray(int argc, char **argv);
+long * to_larray(int argc, char **argv,int * flags);
 long * bubble_sort(int argc,long*input);
 void print_list(t_stack *input);
 void print_error(int input, char **argv_0, long *argv_1);
