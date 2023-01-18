@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:41 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/18 11:18:37 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/18 11:49:00 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void print_error(int input, char **argv_0, long *argv_1);
 void input_list(int argc,t_stack **lst,long *after_sort);
 void sort_list(int argc,t_stack **head_a,t_stack **head_b);
 void free_list(t_stack **head);
+void ft_lstclear(t_stack **lst);
 //deleteberow
 void print_list(t_stack *input);
 

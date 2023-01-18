@@ -6,20 +6,36 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:16:18 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/18 11:23:10 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/18 11:50:10 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void free_list(t_stack **head)
+void ft_lstclear(t_stack **lst)
+{
+    t_stack * tmp;
+    
+    if (!lst || !*lst)
+        return ;
+    while((*lst) != NULL)
+    {
+        tmp = (*lst)->next;
+        free(*lst);        
+        (*lst) = tmp;
+    }
+    (*lst) = NULL;
+}
+
+
+/* void free_list(t_stack **head)
 {
     int j;
     
 
     j = ft_lstsize(*head);
     while(j > 0)
-    {
+    {       
         while((*head)->next != NULL)
             (*head) = (*head)->next;
         while((*head)->prev != NULL)
@@ -29,7 +45,7 @@ void free_list(t_stack **head)
         }
         j--;
     }
-}
+} */
 
 int ft_lstsize(t_stack *lst)
 {

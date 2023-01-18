@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:07 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/18 11:19:10 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/18 11:48:52 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ int main(int argc,char **argv)
     sort_list(argc,&head_a,&head_b);
     print_list(head_a);
     print_list(head_b);
-    free_list(&head_a);
-    free_list(&head_b);
+    ft_lstclear(&head_a);
+    ft_lstclear(&head_b);
     free(long_argv);
+    //printf("%d\n",ft_lstsize(head_a));
+    //printf("%d\n",ft_lstsize(head_b));
     return 0;
 }
 
