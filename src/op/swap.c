@@ -6,11 +6,11 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:14:04 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/17 10:05:31 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/17 20:42:16 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void swap(t_stack **input)
 {

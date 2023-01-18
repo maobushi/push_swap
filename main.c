@@ -1,12 +1,20 @@
 #include <stdio.h>
-int main(int argc, char const *argv[])
+int main(void)
 {
-    int i = 0;
-    printf("argc:%d\n",argc);
-    while(i<argc)
+    long i = 1;
+    long j;
+    
+    j = 1;
+    i = 0;
+
+    while(i < 5)
     {
-        printf("argv[%d]:%s\n",i,argv[i]);
+        if((j<<i) & i-1)
+            printf("i:%ld,j:%ld\n",i,j);
         i++;
     }
+    
     return 0;
 }
+
+
