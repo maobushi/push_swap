@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bubble_sort.c                                      :+:      :+:    :+:   */
+/*   dimensional_comp.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 11:48:03 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/22 19:09:46 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/23 05:37:43 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int  long_array_search (size_t   argc, long *haystack, long needle)
+static int	long_array_search(size_t argc, long *haystack, long needle)
 {
 	size_t	i;
 
@@ -26,21 +26,12 @@ static int  long_array_search (size_t   argc, long *haystack, long needle)
 	return (0);
 }
 
-long *bubble_sort(int argc,long*input)
+static long	*bubble_sort(int argc, long *tmp_array)
 {
 	long	tmp;
 	int		i;
 	int		j;
 
-	long	*tmp_array = malloc(argc*sizeof(long));
-	long	*output_array = malloc(argc*sizeof(long));
-	i = 0;
-	j = 0;
-	while (i < argc)
-	{
-		tmp_array[i] = input[i];
-		i++;
-	}
 	i = 0;
 	while (i < argc)
 	{
@@ -57,6 +48,28 @@ long *bubble_sort(int argc,long*input)
 		}
 		i++;
 	}
+	return (tmp_array);
+}
+
+long	*dimensional_comp(int argc, long*input)
+{
+	int		i;
+	long	*tmp_array;
+	long	*output_array;
+
+	tmp_array = malloc(argc * sizeof(long));
+	if (tmp_array == NULL)
+		return (NULL);
+	output_array = malloc(argc * sizeof(long));
+	if (output_array == NULL)
+		return (NULL);
+	i = 0;
+	while (i < argc)
+	{
+		tmp_array[i] = input[i];
+		i++;
+	}
+	tmp_array = bubble_sort(argc, tmp_array);
 	i = 0;
 	while (i < argc)
 	{

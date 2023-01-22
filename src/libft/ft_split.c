@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 00:08:38 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 02:35:25 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/23 05:36:32 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	free_darray(size_t count, size_t argv_index, void **output)
 	{
 		while (i < argv_index)
 		{
-			//printf("i:%zu count : %zu\n",i,count);
-			//printf("output[%zu]:%s\n",i,(char *)output[i]);
 			free (output[i]);
 			i++;
 		}
@@ -49,7 +47,7 @@ static int	count_index(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_strndup(const char *s1,size_t len)
+static char	*ft_strndup(const char *s1, size_t len)
 {
 	char	*tmp;
 	size_t	j;

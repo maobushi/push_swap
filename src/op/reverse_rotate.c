@@ -6,12 +6,11 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:14:44 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 00:19:15 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/23 05:37:20 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 static void	reverse_rotate(t_stack **lst)
 {
@@ -28,21 +27,21 @@ static void	reverse_rotate(t_stack **lst)
 	(*lst)->prev = NULL;
 }
 
-void rra(t_stack **input)
+void	rra(t_stack **input)
 {
-    reverse_rotate(input);
-    printf("rra\n");
+	reverse_rotate(input);
+	printf("rra\n");
 }
 
-void rrb(t_stack **input)
+void	rrb(t_stack **input)
 {
-    reverse_rotate(input);
-    printf("rrb\n");
+	reverse_rotate(input);
+	printf("rrb\n");
 }
 
-void rrr(t_stack **input_a,t_stack **input_b)
+void	rrr(t_stack **input_a, t_stack **input_b)
 {
-    reverse_rotate(input_a);
-    reverse_rotate(input_b);
-    printf("rrr\n");
+	reverse_rotate(input_a);
+	reverse_rotate(input_b);
+	printf("rrr\n");
 }
