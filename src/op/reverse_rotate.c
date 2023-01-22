@@ -6,26 +6,26 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:14:44 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/17 20:41:39 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/23 00:19:15 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void reverse_rotate(t_stack **input)
-{
-    if(ft_lstsize((*input)) == 1)
-        return ;
-    t_stack* first;
-    t_stack* second;
 
-    first = ft_lstlast((*input));
-    second = (*input);
-    (first->prev)->next = NULL;
-    first->next = second;
-    first->prev = NULL;
-    second->prev = first;
-    (*input) = first;
+static void	reverse_rotate(t_stack **lst)
+{
+	t_stack	*tmp;
+
+	if (!lst || !*lst || !((*lst)->next))
+		return ;
+	tmp = ft_lstlast(*lst);
+	tmp->next = *lst;
+	(*lst)->prev = tmp;
+	*lst = tmp;
+	tmp = tmp->prev;
+	tmp->next = NULL;
+	(*lst)->prev = NULL;
 }
 
 void rra(t_stack **input)

@@ -5,90 +5,83 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 14:25:38 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/18 15:40:58 by maobushi         ###   ########.fr       */
+/*   Created: 2023/01/19 00:45:11 by maobushi          #+#    #+#             */
+/*   Updated: 2023/01/22 12:03:37 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char ** check_iscorrectf(int argc,char **argv,int *flags)
+char **check_input_format(int argc,char**argv)
 {
-    char ** tmp;
-    
-    if(argc <= 1)
-    {
-        exit(EXIT_FAILURE);
-    }
-    else if(argc == 2)
-    {
-        tmp = (char **)ft_split(argv[1],' ');
-        *flags = 1;
-    }
-    else
-    {
-    tmp = ++argv;
-    }
-    return tmp;
+	if(argc <= 1)
+		exit(EXIT_FAILURE);
+	else if (argc == 2)
+	{
+		return(ft_split(argv[1],' '));
+	}
+	else
+		return &argv[1];
 }
 
-int check_isnum(int argc,char ** argv)
+bool	check_is_num(int argc, size_t argv_index, char**input)
 {
-    int i;
-    int j;
-    i = 0;
-    while(i < argc)
-    {
-        j = 0;  
-        if (argv[i][j] == '-' || argv[i][j] == '+')
-            j++;
-        while(argv[i][j])
-        {
-            if (argv[i][j] == ' ')
-                return 2;
-            if(!('0' <= argv[i][j] && argv[i][j] <= '9'))
-                return 1;
-            j++;
-        }
-    i++;
-    }
-    return 0;
+	int	i;
+	int	j;
+	i = 0;
+
+	if (*input == NULL)
+		return  true;
+	while(input[i])
+	{	
+		j = 0;
+		if (input[i][j] == '-' || input[i][j] == '+')
+			j++;
+		while(input[i][j])
+		{
+			if(!('0' <= input[i][j] && input[i][j] <= '9'))
+			{
+				if(argc == 2)
+					free_darray(argc,argv_index,(void **)input);
+				return true;
+			}
+			j++;
+		}
+		i++;
+	}
+	return false;
 }
 
-bool check_int_range(int argc,long * long_argv)
+bool check_is_int(long  *long_argv)
 {
-    int i;
-    i = 0;
-    while(i < argc)
-    {
-        if(!(INT_MIN <= long_argv[i] && long_argv[i] <= INT_MAX))
-            return true;
-        i++;
-    }
-    return false;
+	if(!(INT_MIN <= *long_argv && *long_argv <= INT_MAX))
+		return true;
+	return false;
 }
 
 
-bool check_dup(int argc,long * argv)
+
+
+bool check_is_dup(int input,long * argv)
 {
-    int i;
-    int j;
-    int max;
-    max = argc;
-    i = 0;
-    j = 0;
-    
-    while(i < max)
-    {
-        j = i + 1;
-        while(j < max)
-        {  
-            //printf("look_at:%ld,%ld\n",argv[i], argv[j]);
-            if(argv[i] == argv[j])
-                return true;
-            j++;
-        }
-        i++;
-    }    
-    return false;
+	int i;
+	int j;
+	
+	i = 0;
+	j = 0;
+
+
+	while(i < input)
+	{
+		j = i + 1;
+		while(j < input)
+		{  
+			if(argv[i] == argv[j])
+				return true;
+			j++;
+		}
+		i++;
+	}    
+	return false;
 }
+

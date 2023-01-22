@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   to_larray.c                                        :+:      :+:    :+:   */
+/*   str_to_long.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 16:40:19 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/18 15:32:13 by maobushi         ###   ########.fr       */
+/*   Created: 2023/01/19 02:07:16 by maobushi          #+#    #+#             */
+/*   Updated: 2023/01/22 12:35:41 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include  "push_swap.h"
 
-long *to_larray(int argc, char **argv, int * flags)
+long *str_to_long(char** input)
 {
-    long *larray = malloc(argc * sizeof(long));
-    int i;
-    printf("%d\n",argc);
-    i = 0;
-    while(i < argc)
-    {
-        larray[i] = atol(argv[i]);
-        if (*flags == 1)
-            free(argv[i]);
-            
-        
-        printf("larray[%d]:%ld\n",i,larray[i]);
-    i++;
-    }
     
-    return larray;
+    int i;
+    
+    i = 0;
+    while(input[i])
+        i++;
+    long *long_array = malloc((i+1) * sizeof(long));
+    i=0;
+    while(input[i])
+    {
+        //printf("str_to_long input[%d]:%s\n",i,input[i]);
+        long_array[i] = ft_atol(input[i]);    
+        //printf("str_to_long argv[%d]:%ld\n",i,long_array[i]);
+        i++;
+    }
+
+    return long_array;
 }

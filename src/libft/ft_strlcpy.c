@@ -5,27 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 15:06:25 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/17 10:06:11 by maobushi         ###   ########.fr       */
+/*   Created: 2023/01/19 00:16:11 by maobushi          #+#    #+#             */
+/*   Updated: 2023/01/22 19:07:03 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
 
-#include "../src/push_swap.h"
-
-static size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+size_t	ft_strlcpy(char *dest, char *src, size_t n)
 {
 	size_t	i;
 
@@ -43,3 +30,38 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 	return (ft_strlen(src));
 }
 
+size_t	ft_strlen(char*s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+size_t	ft_arraylen(char**input)
+{
+	size_t	i;
+
+	i = 0;
+	while (input[i] != (void *)0)
+	{
+		i++;
+	}
+	return (i);
+}
+
+size_t	ft_longlen(long *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < sizeof(s))
+	{
+		i++;
+	}
+	return (i);
+}

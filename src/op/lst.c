@@ -6,27 +6,40 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:16:18 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/18 11:50:10 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:53:12 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_lstclear(t_stack **lst)
-{
-    t_stack * tmp;
+//void ft_lstclear(t_stack **lst)
+//{
+//    t_stack * tmp;
     
-    if (!lst || !*lst)
-        return ;
-    while((*lst) != NULL)
-    {
-        tmp = (*lst)->next;
-        free(*lst);        
-        (*lst) = tmp;
-    }
-    (*lst) = NULL;
-}
+//    if (!lst || !*lst)
+//        return ;
+//    while((*lst) != NULL)
+//    {
+//        tmp = (*lst);
+//        free(*lst);        
+//        (*lst) = NULL;
+//        (*lst) = tmp->next;
+//    }
+    
+//}
 
+void	ft_lstclear(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	while (stack && *stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = NULL;
+		*stack = tmp;
+	}
+}
 
 /* void free_list(t_stack **head)
 {
@@ -86,7 +99,7 @@ t_stack *ft_lstlast(t_stack *lst)
 
 void ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-    t_stack  *tmp;
+
 
     if (!lst || !new)
         return ;
@@ -95,9 +108,7 @@ void ft_lstadd_back(t_stack **lst, t_stack *new)
         *lst = new;
         return ;
     }
-    tmp = ft_lstlast(*lst);
-
+    ft_lstlast(*lst)->next = new;
+    new->prev = ft_lstlast(*lst);
     
-    tmp->next = new;
-    new->prev = (tmp);
 }
