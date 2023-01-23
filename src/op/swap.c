@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:14:04 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 05:37:10 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:55:11 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@ void	swap(t_stack **input)
 {
 	t_stack	*first;
 	t_stack	*second;
-
+	int		size;
+	
 	first = (*input);
 	second = (*input)->next;
-	if (ft_lstsize((*input)) == 1)
+	size = ft_lstsize((*input));
+	if (size == 1)
 		return ;
+	else if (size != 2)
+		second->next->prev = first;
 	first->prev = second;
 	first->next = second->next;
 	second->prev = NULL;

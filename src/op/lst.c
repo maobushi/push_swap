@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:16:18 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 05:14:30 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:57:38 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ t_stack	*ft_lstlast(t_stack *lst)
 
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
+	t_stack *tmp;
+
 	if (!lst || !new)
 		return ;
 	if (!*lst)
@@ -71,6 +73,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		*lst = new;
 		return ;
 	}
-	ft_lstlast(*lst)->next = new;
-	new->prev = ft_lstlast(*lst);
+	tmp = ft_lstlast(*lst); 
+	tmp->next = new;
+	new->prev = tmp;
 }

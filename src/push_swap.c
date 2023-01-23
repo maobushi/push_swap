@@ -6,27 +6,27 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 23:50:34 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 07:11:57 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:56:54 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-static void print_list(t_stack *input)
-{   
+//static void print_list(t_stack *input)
+//{   
 
-    while (input != NULL)
-    {
-        printf("index : %ld \n",input->index);
-        printf("prev\t%p \n",input->prev);
-        printf("now\t%p \n",input);
-        printf("next\t%p \n",input->next);
-        //printf("%ld \n",input->index);
-        //printf("%p \n",&(input->index));
+//    while (input != NULL)
+//    {
+//        printf("index : %ld \n",input->index);
+//        printf("prev\t%p \n",input->prev);
+//        printf("now\t%p \n",input);
+//        printf("next\t%p \n",input->next);
+//        //printf("%ld \n",input->index);
+//        //printf("%p \n",&(input->index));
         
-        input = input->next;
-    }
-    printf("\n");
-}
+//        input = input->next;
+//    }
+//    printf("\n");
+//}
 
 void	divide_sort(t_stack **head_a, t_stack **head_b)
 {
@@ -97,3 +97,7 @@ int	main(int argc, char**argv)
 	ft_lstclear(&head_b);
 	free(long_argv);
 }
+//__attribute__((destructor)) static void destructor()
+//  {
+//  	system("leaks -q push_swap");
+//  }
