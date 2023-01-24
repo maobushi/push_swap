@@ -1,4 +1,4 @@
-CC := gcc
+CC := cc
  CFLAGS := -Wall -Wextra -Werror
  DEBUG_FLAG	:= -g -fsanitize=address
 
