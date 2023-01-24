@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:14:48 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 05:37:53 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:01:44 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ void	rotate(t_stack **input)
 void	ra(t_stack **input)
 {
 	rotate(input);
-	printf("ra\n");
+	write(STDOUT_FILENO, "ra\n", 3);
 }
 
 void	rb(t_stack **input)
 {
 	rotate(input);
-	printf("rb\n");
+	write(STDOUT_FILENO, "rb\n", 3);
 }
 
 void	rr(t_stack **input_a, t_stack **input_b)
 {
 	rotate(input_a);
 	rotate(input_b);
-	printf("rr\n");
+	write(STDOUT_FILENO, "rr\n", 3);
 }

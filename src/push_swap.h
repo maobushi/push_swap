@@ -6,14 +6,13 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 00:04:17 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 05:24:21 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:54:02 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
@@ -51,11 +50,13 @@ void	ss(t_stack **input_a, t_stack **input_b);
 void	rra(t_stack **input);
 void	rrb(t_stack **input);
 void	rrr(t_stack **input_a, t_stack **input_b);
-void	push(t_stack **receive, t_stack **send);
+//void	push(t_stack **receive, t_stack **send);
 void	pa(t_stack **receive, t_stack **send);
 void	pb(t_stack **receive, t_stack **send);
 void	sort_three(t_stack **head);
 void	sort_six(t_stack **stack_a, t_stack **stack_b);
+void	print_error(long *long_argv);
+void	detect_op(t_stack **stack_a, t_stack **stack_b);
 long	*str_to_long(char **input);
 long	ft_atol(char *str);
 long	*dimensional_comp(int argc, long*input);

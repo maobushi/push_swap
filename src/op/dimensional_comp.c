@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 11:48:03 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 06:53:29 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:53:16 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,31 @@ long	*dimensional_comp(int argc, long*input)
 	}
 	free(tmp_array);
 	return (output_array);
+}
+
+void	detect_op(t_stack **stack_a, t_stack **stack_b)
+{
+	int	i;
+
+	i = 0;
+	while (ft_lstsize(*stack_a) > 3)
+	{
+		if ((*stack_a)->index == i)
+		{
+			pb(stack_a, stack_b);
+			i++;
+		}
+		else if ((*stack_a)->next->index == i)
+		{
+			ra(stack_a);
+		}
+		else if ((*stack_a)->next->next->index == i)
+		{
+			ra (stack_a);
+		}
+		else
+		{	
+			rra(stack_a);
+		}
+	}
 }

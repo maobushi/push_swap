@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 00:45:11 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 05:30:42 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:00:03 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,32 @@
 
 char	**check_input_format(int argc, char**argv)
 {
+	char	**tmp;
+
 	if (argc <= 1)
 		exit(EXIT_FAILURE);
 	else if (argc == 2)
 	{
-		return (ft_split(argv[1], ' '));
+		tmp = ft_split(argv[1], ' ');
+		if (tmp == NULL || *tmp == NULL)
+			print_error(NULL);
+		return (tmp);
 	}
 	else
 		return (&argv[1]);
 }
 
-bool	check_is_num(int argc, size_t argv_index, char**input)
+bool	check_is_num(int argc, size_t argv_index, char **input)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	if (*input == NULL)
-		return (true);
 	while (input[i])
 	{	
 		j = 0;
+		if (input[i][0] == '\0')
+			return (true);
 		if (input[i][j] == '-' || input[i][j] == '+')
 			j++;
 		while (input[i][j])

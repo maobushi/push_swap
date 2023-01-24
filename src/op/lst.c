@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:16:18 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 12:57:38 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:52:16 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,16 @@ void	ft_lstclear(t_stack **stack)
 
 int	ft_lstsize(t_stack *lst)
 {
-	int	count;
+	int		count;
+	t_stack	*tmp;
 
 	count = 0;
-	if (!lst)
+	tmp = lst;
+	if (!tmp)
 		return (0);
-	while (lst != NULL)
+	while (tmp != NULL)
 	{
-		lst = lst->next;
+		tmp = tmp->next;
 		count ++ ;
 	}
 	return (count);
@@ -64,7 +66,7 @@ t_stack	*ft_lstlast(t_stack *lst)
 
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!lst || !new)
 		return ;
@@ -73,7 +75,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		*lst = new;
 		return ;
 	}
-	tmp = ft_lstlast(*lst); 
+	tmp = ft_lstlast(*lst);
 	tmp->next = new;
 	new->prev = tmp;
 }

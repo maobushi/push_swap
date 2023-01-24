@@ -6,7 +6,7 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 12:20:16 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/23 12:57:14 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:52:41 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,11 @@ void	sort_two(t_stack **head)
 
 void	sort_six(t_stack **stack_a, t_stack **stack_b)
 {
-	long	i;
-
-	i = 0;
-	while (ft_lstsize(*stack_a) > 3)
-	{
-		if ((*stack_a)->index == i)
-		{
-			pb(stack_b, stack_a);
-			i = i + 1;
-		}
-		else
-			ra(stack_a);
-	}
+	detect_op(stack_a, stack_b);
 	sort_three(stack_a);
-	while (i > 0)
+	while (ft_lstsize(*stack_b) > 0)
 	{
 		pa(stack_a, stack_b);
-		i--;
 	}
 }
 
@@ -97,7 +84,7 @@ void	sort_morethan_six(t_stack **head_a, t_stack **head_b)
 		while (stack_a_size > 0)
 		{
 			if (((*head_a)->index & (flags << i)) == 0)
-				pb(head_b, head_a);
+				pb(head_a, head_b);
 			else
 				ra(head_a);
 			stack_a_size--;
