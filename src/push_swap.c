@@ -6,11 +6,27 @@
 /*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 23:50:34 by maobushi          #+#    #+#             */
-/*   Updated: 2023/01/24 14:45:57 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:38:50 by maobushi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+bool 	check_sorted(t_stack **head_a)
+{
+	t_stack	*tmp;
+
+	tmp = *head_a;
+	while (tmp->next != NULL)
+	{
+		if (tmp->index > tmp->next->index)
+			return (false);
+		tmp = tmp->next;
+	}
+	return (true);
+}
+
+
 
 void	divide_sort(t_stack **head_a, t_stack **head_b)
 {
@@ -23,14 +39,19 @@ void	divide_sort(t_stack **head_a, t_stack **head_b)
 		sort_two((head_a));
 	else if (lstsize == 3)
 	{	
-		sort_three(head_a);
+		if (check_sorted(head_a) == false)
+			sort_three(head_a);
 	}
 	else if (lstsize <= 6)
 	{
-		sort_six(head_a, head_b);
+		if (check_sorted(head_a) == false)
+			sort_six(head_a, head_b);
 	}
 	else if (lstsize >= 7)
-		sort_morethan_six(head_a, head_b);
+	{
+		if (check_sorted(head_a) == false)
+			sort_morethan_six(head_a, head_b);
+	}
 }
 
 void	print_error(long *long_argv)
