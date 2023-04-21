@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maobushi <maobushi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 23:50:34 by maobushi          #+#    #+#             */
-/*   Updated: 2023/04/20 13:38:50 by maobushi         ###   ########.fr       */
+/*   Updated: 2023/04/21 20:52:05 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool 	check_sorted(t_stack **head_a)
+bool	check_sorted(t_stack **head_a)
 {
 	t_stack	*tmp;
 
@@ -25,8 +25,6 @@ bool 	check_sorted(t_stack **head_a)
 	}
 	return (true);
 }
-
-
 
 void	divide_sort(t_stack **head_a, t_stack **head_b)
 {
